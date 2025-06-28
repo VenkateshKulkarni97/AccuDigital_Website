@@ -1,12 +1,21 @@
-// Logo animation on load
+// script.js
+
+// Animate logo on load
 window.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('logo');
-  logo.style.opacity = '0';
-  logo.style.transform = 'translateY(-10px)';
+  logo.style.transition = 'all 0.8s ease';
+  logo.style.opacity = '1';
+  logo.style.transform = 'translateY(0)';
 
+  const heroContent = document.querySelector('.hero-content');
   setTimeout(() => {
-    logo.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-    logo.style.opacity = '1';
-    logo.style.transform = 'translateY(0)';
-  }, 200);
+    heroContent.style.opacity = '1';
+    heroContent.style.transform = 'translateY(0)';
+  }, 400);
 });
+
+// Scroll to contact form
+function scrollToForm() {
+  const formSection = document.getElementById('contact');
+  formSection.scrollIntoView({ behavior: 'smooth' });
+}
